@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+<header>
+    <h1>Agencia de viajes</h1>
+</header>
+
+<!-- Login -->
+
+<section class="contenedorLogin">
+    <h3>Iniciar Sesion</h3>
+    <form id="formLogin">
+        <label for="mailLogin">Mail:</label>
+        <input id="mailLogin" type="email" placeholder="abc@mail.com" required>
+        <label for="passwordLogin">Contraseña:</label>
+        <input id="passwordLogin" type="password" placeholder="password" required>
+        <input type="submit" value="Iniciar sesión">
+    </form>
+    <div>
+        <p id="errorLogin"></p>
+    </div>
+    <h3>Registrarse</h3>
+    <form id="formRegister">
+        <label for="nameRegister">Nombre:</label>
+        <input id="nameRegister" type="text" placeholder="abc" required>
+        <label for="mailRegister">Mail:</label>
+        <input id="mailRegister" type="email" placeholder="abc@mail.com" required>
+        <label for="passwordRegister">Contraseña:</label>
+        <input id="passwordRegister" type="password" placeholder="Contraseña" required>
+        <input type="submit" value="Registrarse">
+    </form>
+
+</section>
+
+<!-- Fin Login -->
+
+<div class="divContenedorWeb">
+
+    <h2>Mis viajes</h2>
+    <button id="btn-viajes">Mostrar viajes</button>
+    <section class="contenedorViajes">
+        <div class="contenedorFuturos">
+            <h3>Viajes futuros</h3>
+            <table id="viajesFuturos">
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th>Continente</th>
+                    <th>Dia inic.</th>
+                    <th>Mes inic.</th>
+                    <th>Año inic.</th>
+                    <th>Dia fin</th>
+                    <th>Mes fin</th>
+                    <th>Año fin</th>
+                    <th>Descrip.</th>
+                </tr>
+                </thead>
+                <tbody id="tablaViajesFuturos">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="contenedorRealizados">
+            <table id="viajesRealizados">
+                <h3>Viajes realizados</h3>
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Ciudad</th>
+                    <th>Continente</th>
+                    <th>Dia inic.</th>
+                    <th>Mes inic.</th>
+                    <th>Año inic.</th>
+                    <th>Dia fin</th>
+                    <th>Mes fin</th>
+                    <th>Año fin</th>
+                    <th>Descrip.</th>
+                </tr>
+                </thead>
+                <tbody id="tablaViajesRealizados">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <h2> Planes </h2>
+    <div id="mostrarPlanes">
+
+    </div>
+
+    <h2>Nuevo viaje</h2>
+
+    <section class="contenedorAgregarViaje">
+        <div class="viajeFormulario">
+            <h3>Completar formulario</h3>
+            <form id="agregarViaje" action="">
+                <label for="nombreViaje">Nombre de viaje:</label>
+                <input type="text" id="nombreViaje" name="nombreViaje" required><br><br>
+
+                <label for="ciudadDestino">Ciudad de destino:</label>
+                <input type="text" id="ciudadDestino" name="ciudadDestino" required><br><br>
+
+                <label for="continenteDestino">Continente de destino:</label>
+                <input type="text" id="continenteDestino" name="continenteDestino" required><br><br>
+
+                <label for="diaInicio">Dia de inicio:</label>
+                <input type="number" id="diaInicio" name="diaInicio" required><br><br>
+
+                <label for="mesInicio">Mes de inicio:</label>
+                <input type="number" id="mesInicio" name="mesInicio" required><br><br>
+
+                <label for="anioInicio">Año de inicio:</label>
+                <input type="number" id="anioInicio" name="anioInicio" required><br><br>
+
+                <label for="diaFin">Dia fin:</label>
+                <input type="number" id="diaFin" name="diaFin" required><br><br>
+
+                <label for="mesFin">Mes fin:</label>
+                <input type="number" id="mesFin" name="mesFin" required><br><br>
+
+                <label for="anioFin">Año fin:</label>
+                <input type="number" id="anioFin" name="anioFin" required><br><br>
+
+                <label for="descripcionViaje">Descripción:</label>
+                <input type="text" id="descripcionViaje" name="descripcionViaje" required><br><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <div class="viajeSubirArchivo">
+            <h3>Subir archivo de texto</h3>
+            <input type="file" id="archivoDeTextoViaje" name="archivoDeTextoViaje"/>
+        </div>
+    </section>
+
+    <h2>Nuevo Plan</h2>
+    <div>
+        <label for="nombrePlan">Nombre plan:</label>
+        <input type="text" id="nombrePlan" name="nombrePlan" required><br><br>
+
+        <label for="descripcion">Descripción</label>
+        <input type="text" id="descripcion" name="descripcion" required><br><br>
+
+        <label for="pais">País:</label>
+        <input type="text" id="pais" name="pais" required><br><br>
+
+        <label for="fechaInicioPlan">Fecha inicio plan:</label>
+        <input type="date" id="fechaInicioPlan" name="fechaPlan" required><br><br>
+
+        <label for="fechaFinPlan">Fecha fin plan:</label>
+        <input type="date" id="fechaFinPlan" name="fechaPlan" required><br><br>
+
+        <select name="select" id="planViajes"></select>
+    </div>
+    <section class="contenedorPlanes">
+
+        <form class="agregarVuelo">
+            <h3>Vuelo</h3>
+
+            <label for="nroVuelo">Número de vuelo:</label>
+            <input type="number" id="nroVuelo" name="nroVuelo" required><br><br>
+
+            <label for="fechaVueloInicio">Fecha inicio:</label>
+            <input type="date" id="fechaVueloInicio" name="fechaVuelo" required><br><br>
+
+            <label for="horaVueloInicio">Hora inicio:</label>
+            <input type="number" id="horaVueloInicio" name="horaVueloInicio" min="0" max="24" required><br><br>
+
+            <label for="fechaVueloFin">Fecha fin:</label>
+            <input type="date" id="fechaVueloFin" name="fechaVuelo" required><br><br>
+
+            <label for="horaVueloFin">Hora fin:</label>
+            <input type="number" id="horaVueloFin" name="horaVueloFin" min="0" max="24" required><br><br>
+
+            <label for="compania">Compañia:</label>
+            <input type="text" id="compania" name="compania" required><br><br>
+
+            <label for="aeropuertoSalida">Aeropuerto salida:</label>
+            <input type="text" id="aeropuertoSalida" name="aeropuertoSalida" required><br><br>
+
+            <label for="aeropuertoLlegada">Aeropuerto llegada:</label>
+            <input type="text" id="aeropuertoLlegada" name="aeropuertoLlegada" required><br><br>
+
+            <label for="codigoReserva">Codigo reserva:</label>
+            <input type="text" id="codigoReserva" name="codigoReserva" required><br><br>
+
+            <label for="infoAeropuerto">Información Aeropuerto:</label>
+            <input type="text" id="infoAeropuerto" name="infoAeropuerto" required><br><br>
+
+            <label for="escalaTiempo">Escala de tiempo:</label>
+            <input type="number" id="escalaTiempo" name="escalaTiempo" required><br><br>
+
+            <input type="submit">
+        </form>
+
+        <form class="agregarReserva">
+            <h3>Reserva</h3>
+
+            <label for="hotel">Hotel:</label>
+            <input type="text" id="hotel" name="hotel" required><br><br>
+
+            <input type="submit">
+        </form>
+
+        <form class="agregarPlan">
+            <h3>Excursión</h3>
+
+            <label for="lugar">Lugar:</label>
+            <input type="text" id="lugar" name="lugar" required><br><br>
+
+            <label for="duracion">Duración:</label>
+            <input type="number" id="duracion" name="duracion" required><br><br>
+
+            <input type="submit">
+        </form>
+    </section>
+
+    <h2>Reportes</h2>
+
+    <section class="contenedorReportes">
+        <form class="generarReporteUsuario">
+            <h3>Reporte de Usuario</h3>
+            <label for="selectUserReports">Tipo reporte:</label>
+            <select name="select" id="selectUserReports">
+                <option value="users/nofinished/">Planes pendientes</option>
+                <option value="users/finished/">Planes realizados</option>
+                <option value="users/reportDays/">Rango de fecha</option>
+                <option value="zonaGeografica/">Zona geográfica</option>
+            </select>
+
+            <label for="continents">Continente:</label>
+            <select id="continents" disabled>
+
+            </select>
+
+            <label for="fechaInicioReporte">Fecha inicio:</label>
+            <input type="date" id="fechaInicioReporte" name="fechaInicioReporte" required disabled><br><br>
+
+            <label for="fechaFinReporte">Fecha fin:</label>
+            <input type="date" id="fechaFinReporte" name="fechaFinReporte" required disabled><br><br>
+
+        </form>
+        <div class="generarReporteCompania">
+            <h3>Reporte de Compañia</h3>
+            <select name="select" id="selectCompanyReports">
+                <option value="masViajes">Usuarios con más viajes</option>
+                <option value="zonaGeografica">Zona geográfica</option>
+            </select>
+            <input type="button" value="Generar reporte Compania" id="btnReportCompany">
+        </div>
+    </section>
+
+    <input type="button" value="Generar reporte" id="btnReport">
+
+    <div id="showReports">
+
+    </div>
+
+
+</div> <br><br>
+
+<footer>
+    <p>Arquitecturas Web</p>
+</footer>
+
+<script src="js/js.js"></script>
+
+</body>
+</html>
